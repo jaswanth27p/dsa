@@ -81,7 +81,8 @@
 **Space Complexity**: O(1) for in-place, O(n²) if using extra space  
 **Approach 1 (Index Pattern)**:  
 - For 90° clockwise: `new_matrix[i][j] = matrix[n-1-j][i]`  
-- Create new matrix with transformed indices  
+- Create new matrix with transformed indices
+
 **Approach 2 (In-place)**:  
 1. Transpose the matrix (swap rows and columns)  
 2. Reverse each row of the transposed matrix  
