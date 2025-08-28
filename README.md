@@ -82,15 +82,9 @@
 **Approach 1 (Index Pattern)**:  
 - For 90° clockwise: `new_matrix[i][j] = matrix[n-1-j][i]`  
 - Create new matrix with transformed indices  
-
 **Approach 2 (In-place)**:  
 1. Transpose the matrix (swap rows and columns)  
 2. Reverse each row of the transposed matrix  
-**Dry Run**:  
-1. For 3x3 matrix: transpose then reverse each row  
-2. Original: `[[1,2,3],[4,5,6],[7,8,9]]`  
-3. Transpose: `[[1,4,7],[2,5,8],[3,6,9]]`  
-4. Reverse rows: `[[7,4,1],[8,5,2],[9,6,3]]`  
 
 ### 8. Merge Overlapping Subintervals
 **Pattern**: Sort and merge  
