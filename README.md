@@ -100,3 +100,30 @@
 4. Move non-overlapping intervals forward and increment counter
 5. Return intervals from index 0 to counter
 
+### 9. Search in a 2D Matrix
+**Pattern**: Binary Search on 2D structure  
+**Key Insight**: Treat matrix as 1D sorted array using index mapping  
+**Use Case**: Efficient searching in row/column sorted matrices  
+**Time Complexity**: O(log(m×n))  
+**Space Complexity**: O(1)  
+**Dry Run**:
+1. Initialize low=0, high=(rows×cols)-1
+2. While low <= high, calculate mid = (low+high)/2
+3. Map mid to 2D indices: row = mid/cols, col = mid%cols
+4. Compare target with matrix[row][col]
+5. Adjust search range based on comparison
+6. Return true if found, false otherwise
+
+### 10. Pow(x, n)
+**Pattern**: Exponentiation by squaring  
+**Key Insight**: Divide and conquer approach for efficient calculation  
+**Use Case**: Mathematical computations, optimization problems  
+**Time Complexity**: O(log n)  
+**Space Complexity**: O(1)  
+**Dry Run**:
+1. Convert n to absolute value (handle sign later)
+2. Initialize result = 1
+3. While absolute n > 0:
+   - If n is odd: multiply result by x, reduce n by 1
+   - If n is even: square x, halve n
+4. Return result (or 1/result for negative n)
