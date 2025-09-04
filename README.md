@@ -127,3 +127,34 @@
    - If n is odd: multiply result by x, reduce n by 1
    - If n is even: square x, halve n
 4. Return result (or 1/result for negative n)
+
+### 11. Majority Element (> n/2)
+**Pattern**: Boyer-Moore Voting Algorithm  
+**Key Insight**: Cancel out pairs of different elements, majority remains  
+**Use Case**: Finding dominant elements in streams/data  
+**Time Complexity**: O(n)  
+**Space Complexity**: O(1)  
+**Dry Run**:
+1. Initialize count = 0, candidate = null
+2. Loop through each element:
+   - If count == 0: set candidate = current element
+   - If current element == candidate: count++
+   - Else: count--
+3. Return candidate (guaranteed majority exists)
+
+### 12. Majority Element (> n/3)
+**Pattern**: Extended Boyer-Moore Voting  
+**Key Insight**: At most 2 elements can appear > n/3 times  
+**Use Case**: Finding frequent elements with threshold  
+**Time Complexity**: O(n)  
+**Space Complexity**: O(1)  
+**Dry Run**:
+1. Initialize candidate1, candidate2 = null, count1, count2 = 0
+2. Loop through elements:
+   - If element == candidate1: count1++
+   - Else if element == candidate2: count2++
+   - Else if count1 == 0: set candidate1 = element, count1 = 1
+   - Else if count2 == 0: set candidate2 = element, count2 = 1
+   - Else: count1--, count2--
+3. Verify both candidates actually appear > n/3 times
+4. Return valid candidates
